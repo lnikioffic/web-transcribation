@@ -1,7 +1,5 @@
-# from transcribation import get_audio_text
+from transcribation import get_audio_text
 import streamlit as st
-
-#print(get_audio_text('test_video.mp4'))
 
 
 def main():
@@ -11,10 +9,14 @@ def main():
     # Если файл загружен
     if uploaded_file is not None:
         # Чтение содержимого файла
-        file_contents = uploaded_file.read().decode("utf-8")
+        file_contents = get_audio_text('test_video.mp4')
 
         # Вывод содержимого файла
         st.text_area("Содержимое файла:", file_contents, height=300)
+
+    file_contents = get_audio_text('test_video.mp4')
+    # Вывод содержимого файла
+    st.text_area("Содержимое файла:", file_contents, height=300)
 
 
 if __name__ == "__main__":

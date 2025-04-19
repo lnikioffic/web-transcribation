@@ -1,8 +1,7 @@
 import os
-
 import whisper
 
-_model = whisper.load_model('small')
+_model = whisper.load_model('base', download_root='.')
 
 
 def get_audio_text(file_path: str) -> str:
