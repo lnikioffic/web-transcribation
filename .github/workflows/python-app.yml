@@ -17,6 +17,9 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+    - name: ffmpeg
+    - run: apt install ffmpeg
+    
     - uses: actions/checkout@v4
     - name: Install uv
       uses: astral-sh/setup-uv@v5
