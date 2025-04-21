@@ -9,5 +9,5 @@ def get_audio_text(file_path: str) -> str:
         audio = whisper.load_audio(file_path)
         audio = whisper.pad_or_trim(audio)
         result = _model.transcribe(audio)
-        return result['text']
+        return result['text'].strip()
     return ''
