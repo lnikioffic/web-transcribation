@@ -32,10 +32,13 @@ jobs:
           python-version-file: ".python-version"
           
     - name: Install the project
-      run: uv sync --dev
+      run: | 
+        uv sync --dev
+        uv add pytest
 
     - name: Run Ruff
       run: uvx ruff check --output-format=github .
       
     - name: Test with pytest
-      run: pytest tests.py
+      run: |
+        pytest tests.py
