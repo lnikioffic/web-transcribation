@@ -7,7 +7,7 @@ requires-python = ">=3.12"
 dependencies = [
     "ffmpeg>=1.4",
     "ffmpeg-python>=0.2.0",
-    "openai-whisper>=20240930",
+    "openai-whisper",
     "setuptools>=78.1.0",
     "setuptools-rust>=1.11.1",
     "streamlit>=1.44.1",
@@ -15,7 +15,14 @@ dependencies = [
     "torchvision>=0.21.0",
 ]
 
+[tool.pytest.ini_options]
+pythonpath = ["."]
+addopts = ["--import-mode=importlib", "-p no:warnings"]
+
 [dependency-groups]
 dev = [
     "pytest>=8.3.5",
 ]
+
+[tool.uv.sources]
+openai-whisper = { git = "https://github.com/openai/whisper.git" }
