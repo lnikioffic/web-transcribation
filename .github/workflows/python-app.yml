@@ -38,4 +38,4 @@ jobs:
       run: uvx ruff check --output-format=github .
       
     - name: Test with pytest
-      run: uvx pytest tests.py
+      run: pytest tests.py
